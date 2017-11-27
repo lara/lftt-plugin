@@ -40,7 +40,7 @@ $(TRANSLATOR3): $(TRANSLATOR3_SOURCE)
 
 
 # test the translator for atomic operations
-check: $(TRANSLATOR2) $(TRANSLATOR1)
+check: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3)
 	cp $(TESTCODE2) RoseIntermediateCPPFile.cpp 
 	./$(TRANSLATOR2) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp  
 	cp rose_RoseIntermediateCPPFile.cpp rose_LogicalStatus.h 
