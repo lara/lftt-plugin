@@ -58,6 +58,8 @@ translate: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3)
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
+	cp LFTT.h LFTTTypeDef.h LogicalStatus.h src/
+
 
 clean:
 	rm -rf $(TRANSLATOR) *.o rose_* *.dot
