@@ -46,32 +46,36 @@ $(TRANSLATOR4): $(TRANSLATOR4_SOURCE)
 
 # test the translator for atomic operations
 translate: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3) $(TRANSLATOR4)
-	cp LFTT.h LFTTTypeDef.h LogicalStatus.h src/
+	cp src/$(LINKED_LIST_PATH) src/$(LINKED_LIST_PATH) .
+
+	mkdir -p src/output
 
 	cp $(TESTCODE2) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR2) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp src/rose_LogicalStatus.h
+	cp rose_RoseIntermediateCPPFile.cpp src/output/LogicalStatus.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
 	cp $(TESTCODE) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR1) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp src/rose_LFTT.h
+	cp rose_RoseIntermediateCPPFile.cpp src/output/LFTT.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
 	cp $(TESTCODE3) RoseIntermediateCPPFile.cpp
 	cp $(LINKED_LIST_NODE_PATH) LinkedListNode.h
 	./$(TRANSLATOR3) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp src/rose_LinkedListNode.h
+	cp rose_RoseIntermediateCPPFile.cpp src/output/LinkedListNode.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
 	cp $(TESTCODE4) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR4) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp src/rose_LinkedList.h
+	cp rose_RoseIntermediateCPPFile.cpp src/output/LinkedList.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
+
+	cp LFTT.h LFTTTypeDef.h LogicalStatus.h src/output
 
 clean:
 	rm -rf $(TRANSLATOR) *.o rose_* *.dot
