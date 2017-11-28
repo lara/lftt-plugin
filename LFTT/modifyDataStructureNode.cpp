@@ -15,6 +15,7 @@ void visitorTraversal::visit(SgNode* node)
   PreprocessingInfo::RelativePositionType position = PreprocessingInfo::inside;
   if (node->variantT() == V_SgClassDefinition) {
     SageInterface::attachArbitraryText(isSgLocatedNode(node), "  std::atomic<NodeInfo*> info;", position);
+    SageInterface::attachArbitraryText(isSgLocatedNode(node), "  std::atomic<uintptr_t> next;", position);
   }
 }
 
