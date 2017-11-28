@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LFTTTypeDef_H
+#define LFTTTypeDef_H
 
 #include <atomic>
 
@@ -36,3 +37,5 @@ enum Status {
 	fail,
 	retry
 };
+
+#endif
