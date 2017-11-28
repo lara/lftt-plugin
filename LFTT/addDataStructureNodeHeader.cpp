@@ -31,7 +31,7 @@ int main (int argc, char** argv)
     const SgFilePtrList& fileList = project->get_fileList();
     SgFilePtrList::const_iterator file = fileList.begin();
     sourceFile = isSgSourceFile(*file);
-    const std::string &headerFileName = "LinkedListNode.h" // std::getenv("LINKED_LIST_NODE_PATH");
+    const std::string &headerFileName = "LinkedListNode.h"; // std::getenv("LINKED_LIST_NODE_PATH");
     PreprocessingInfo::RelativePositionType position = PreprocessingInfo::before;
     bool isSystemHeader = false;
 
