@@ -4,7 +4,7 @@
 
 const int TRANSACTION_SIZE = 4;
 
-//Algorithm 1: Type Definition
+// Algorithm 1: Type Definition
 enum TxStatus {
 	Active,
 	Committed,
@@ -18,8 +18,7 @@ enum OpType {
 struct Operation {
 	OpType type;
 	int key;
-	// Point to whatever object you want to associate with a key here. 
-	void *val;
+	void *val; // Point to whatever object you want to associate with a key here.
 };
 struct Desc {
 	int size = TRANSACTION_SIZE;

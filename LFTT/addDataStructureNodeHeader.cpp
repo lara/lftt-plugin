@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 class visitorTraversal : public AstSimpleProcessing
 {
   protected:
@@ -17,12 +15,7 @@ void visitorTraversal::visit(SgNode* node)
     SageInterface::attachArbitraryText(isSgLocatedNode(node), "bool IsNodePresent(Node* n, int key);", position);
     SageInterface::attachArbitraryText(isSgLocatedNode(node), "bool IsKeyPresent(Node* n);", position);
   }
-
 }
-
-
-
-
 
 int main (int argc, char** argv)
 {
@@ -34,8 +27,6 @@ int main (int argc, char** argv)
     visitorTraversal myVisitor;
     myVisitor.traverseInputFiles(project, preorder);
 
-
-
     SgSourceFile *sourceFile;
     const SgFilePtrList& fileList = project->get_fileList();
     SgFilePtrList::const_iterator file = fileList.begin();
@@ -45,9 +36,6 @@ int main (int argc, char** argv)
     bool isSystemHeader = false;
 
     SageInterface::insertHeader (sourceFile, headerFileName, isSystemHeader, position);
-
-
-
 
     // Generate source code from AST and invoke your backend compiler
     return backend(project);
