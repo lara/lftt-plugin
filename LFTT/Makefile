@@ -46,7 +46,7 @@ $(TRANSLATOR4): $(TRANSLATOR4_SOURCE)
 
 # test the translator for atomic operations
 translate: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3) $(TRANSLATOR4)
-	cp src/$(LINKED_LIST_PATH) src/$(LINKED_LIST_PATH) .
+	cp src/$(LINKED_LIST_PATH) src/$(LINKED_LIST_NODE_PATH) .
 
 	mkdir -p src/output
 
