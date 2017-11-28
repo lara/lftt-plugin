@@ -43,18 +43,18 @@ $(TRANSLATOR3): $(TRANSLATOR3_SOURCE)
 check: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3)
 	cp $(TESTCODE2) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR2) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp rose_LogicalStatus.h
+	cp rose_RoseIntermediateCPPFile.cpp src/rose_LogicalStatus.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
 	cp $(TESTCODE) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR1) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp rose_LFTT.h
+	cp rose_RoseIntermediateCPPFile.cpp src/rose_LFTT.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 	cp $(TESTCODE3) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR3) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp rose_LinkedListNode.h
+	cp rose_RoseIntermediateCPPFile.cpp src/rose_LinkedListNode.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
