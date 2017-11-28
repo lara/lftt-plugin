@@ -17,7 +17,7 @@ void visitorTraversal::visit(SgNode* node)
     SageInterface::attachArbitraryText(isSgLocatedNode(node), "bool IsNodePresent(Node* n, int key);", position);
     SageInterface::attachArbitraryText(isSgLocatedNode(node), "bool IsKeyPresent(Node* n);", position);
   }
- 
+
 }
 
 
@@ -40,7 +40,7 @@ int main (int argc, char** argv)
     const SgFilePtrList& fileList = project->get_fileList();
     SgFilePtrList::const_iterator file = fileList.begin();
     sourceFile = isSgSourceFile(*file);
-    const std::string &headerFileName = "LinkedListNode.h";
+    const std::string &headerFileName = std::getenv("LINKED_LIST_NODE_PATH");
     PreprocessingInfo::RelativePositionType position = PreprocessingInfo::before;
     bool isSystemHeader = false;
 
