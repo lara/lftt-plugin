@@ -74,7 +74,7 @@ translate: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3) $(TRANSLATOR4)
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
-	cp LFTT.h LFTTTypeDef.h LogicalStatus.h src/output
+	cp LFTTTypeDef.h src/output
 
 clean:
 	rm -rf $(TRANSLATOR) *.o rose_* *.dot
