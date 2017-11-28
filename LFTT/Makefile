@@ -59,7 +59,7 @@ translate: $(TRANSLATOR2) $(TRANSLATOR1) $(TRANSLATOR3) $(TRANSLATOR4)
 	rm RoseIntermediateCPPFile.cpp
 	cp $(TESTCODE3) RoseIntermediateCPPFile.cpp
 	./$(TRANSLATOR3) -c -std=c++11 -I. -I$(ROSE_INSTALLATION)/include RoseIntermediateCPPFile.cpp
-	cp rose_RoseIntermediateCPPFile.cpp src/rose_LinkedListNode.h
+	cp rose_RoseIntermediateCPPFile.cpp src/LinkedListNode.h
 	rm rose_RoseIntermediateCPPFile.cpp
 	rm RoseIntermediateCPPFile.cpp
 
